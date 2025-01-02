@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixi-Skia App</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 10px;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 200px;
+      padding: 20px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-align: center;
+    }
+    .btn-yellow {
+      background: #ffeb3b;
+    }
+    .btn-blue {
+      background: #2196f3;
+      color: white;
+    }
+    .btn-green {
+      background: #90EE90;
+    }
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .canvas-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .canvas-wrapper {
+      background: #e0e0e0;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+      width: 400px;
+      height: 330px;
+    }
+    .canvas-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    #pixi-container, #skia-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <button id="add-random-btn" class="btn btn-blue">Сгенерировать случайную линию / фигуру</button>
+    <button id="export-pdf-btn" class="btn btn-yellow">Экспорт в PNG</button>
+    <button id="switch-container" class="btn btn-green">Переключить контейнер</button>
+  </div>
+  
+  <div class="main-content">
+    <div class="canvas-container">
+      <div class="canvas-wrapper">
+        <div class="canvas-title">Pixi.js</div>
+        <div id="pixi-container"></div>
+      </div>
+      
+      <div class="canvas-wrapper">
+        <div class="canvas-title">Skia</div>
+        <div id="skia-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
